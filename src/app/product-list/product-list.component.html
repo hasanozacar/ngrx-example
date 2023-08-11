@@ -1,0 +1,16 @@
+<p>product-list works!</p>
+
+<div *ngFor="let product of products$ | async">
+    <h2>{{product.title}}</h2>
+    <h3>{{product.author}}</h3>
+    <button (click)="RemoveProduct(product.id)">Remove book</button>
+</div>
+
+<h1> create a new product</h1>
+
+<div>
+    <input #productId type="text" placeholder="Product id">
+    <input #productTitle type="text" placeholder="Product Title">
+    <input #productAuthor type="text" placeholder="author">
+    <button (click)="AddProduct(productId.value,productTitle.value,productAuthor.value)" >Add Product</button>
+</div>

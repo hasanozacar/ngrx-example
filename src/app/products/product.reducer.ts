@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { addProduct, removeProduct } from './products.actions';
 import { Product } from '../models/product';
 
-export const intitialState: ReadonlyArray<Product> = [];
+export const intitialState: Product[] = [];
 
 export const ProductReducer = createReducer(
   intitialState,
