@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Store,select } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { Product } from "../models/product";
-import { addProduct, removeProduct } from "../products/products.actions";
+import { addProduct, addProductSucces, removeProduct } from "../products/products.actions";
 import { AppState } from "../app.state";
 
 @Component({
@@ -18,7 +18,7 @@ export class ProductListComponent {
     this.products$ =store.pipe(select('product'))
   }
   AddProduct(id: string, title: string, author: string) {
-    this.store.dispatch(addProduct({ id, title, author }));
+    this.store.dispatch(addProductSucces({ id, title, author }));
   }
   RemoveProduct(productId: string) {
     this.store.dispatch(removeProduct({ productId }));
